@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    
+    #wrapper {
+        width: 600px;
+        height: 500px;
+        background-color: yellow;
+        margin: auto;
+        text-align: center;
+      }
+      #image {
+        width: 600px;
+        height: 400px;
+      };
+         </style>
+    
+    
+    
+
+       
+
+
+    </script>
+</head>
+ 
+
+<body onload="init()">
+    <div id="wrapper">
+      <div id="fileName">카드 파일명</div>
+
+      <img id="image" src="../images/card/h1.jpg" alt="" />
+
+      <div>
+        컨트롤러
+     
+        <button id="bt_next">다음</button>
+      </div>
+
+      <div></div>
+    </div>
+   
+   
+   
+
+<script>
+    let n=1
+    function next(){
+        n++;
+         let image=document.getElementById("image");
+          image.src="../images/card/h"+n+".jpg";
+
+         
+
+    }
+    
+
+    function init() {
+
+        let bt_next = document.getElementById("bt_next") ;
+        bt_next.addEventListener("click", function(){
+            next();
+        });
+        
+    }
+        
+  
+      </script>
+       
+
+
+</body>
+</html>

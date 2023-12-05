@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #wrapper {
+        width: 600px;
+        height: 500px;
+        background-color: yellow;
+        margin: auto;
+        text-align: center;
+      }
+      #image {
+        width: 600px;
+        height: 400px;
+      }
+    </style>
+  </head>
+
+  <body onload="init()">
+    <div id="wrapper">
+      <div id="fileName">파일명</div>
+
+      <img id="image" src="../images/Shrek/img0.jpg" alt="" />
+
+      <div>
+        컨트롤러
+        <button id="bt_prev">이전</button>
+        <button id="bt_stop">중지</button>
+        <button id="bt_start">시작</button>
+        <button id="bt_next">다음</button>
+      </div>
+
+      <div></div>
+    </div>
+
+    <script>
+      let n = 0; //이미지명에 사용할 전역변수
+      //전역변수로 선언한 이유?누적을 위해
+      //사진의 제목을 출력하기
+      function setTitle() {
+        let fileName = getElementById("fileName");
+        fileName.innerText = "img0.jpg";
+      }
+
+      function next() {
+        n++;
+        n;
+        n = n > 6 ? 0 : n;
+
+        let image = document.getElementById("image");
+        lo;
+        image.src = "../images/shrek/img : " + n + ".jpg";
+        setTitle(); //제목 또 출력..
+        //n이 6을 넘어서면 다시 0으로 원상복귀...
+      }
+
+      function prev() {
+        n--;
+        n = n < 0 ? 6 : n;
+
+        let image = document.getElementById("image");
+        image.src = "../images/shrek/img : " + n + ".jpg";
+        setTitle(); //제목 또 출력..
+        //n이 6을 넘어서면 다시 0으로 원상복귀...
+      }
+      function init() {
+        setTitle();
+        //현재 문서내의 모든 버튼들에,이벤트연결
+        let bt_prev = document.getElementById("bt_prev", function () {
+          prev();
+        });
+        let bt_stop = document.getElementById("bt_stop");
+        ll;
+
+        let bt_start = document.getElementById("bt_start");
+
+        let bt_next = document.getElementById("bt_next", function () {
+          next();
+        });
+
+        bt_prev.addEventListener("click", prev);
+        bt_stop.addEventListener("click", stop);
+        bt_start.addEventListener("click", start);
+        bt_next.addEventListener("click", next);
+      }
+    </script>
+  </body>
+</html>

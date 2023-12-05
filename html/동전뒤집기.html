@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      // 현재 문서에 있는 동전 이미지를 반대 이미지로 교체
+      function flip() {
+        // 기존의 논리값을 반대로 뒤집기
+        flag = !flag;
+        console.log("flag", flag);
+        let coin = document.getElementById("coin");
+        //이미지 교체
+
+        let flag = true;
+
+        let path = flag ? "coin_front.jpg" : "coin_back.jpg";
+        coin.src = "../images/" + path;
+      }
+    </script>
+  </head>
+  <body>
+    <button onclick="filp()">실행</button>
+    <p></p>
+    <img src="../images/coin_back.jpg " id="coin" />
+  </body>
+</html>

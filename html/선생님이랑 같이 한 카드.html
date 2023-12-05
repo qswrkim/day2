@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      let n = 1; //첫번째 이미지부터 이미 보고 있으므로 어색하지 않게 처리하기 위해
+      let order = 4;
+
+      // 다음 사진을 나오게 처리하는 함수
+      function next() {
+        //문서내의 카드이미지를 src를 변경..
+        let pic = document.getElementById("pic");
+        n++;
+
+        pic.src = "../images/card/" + fileName;
+        console.log("n은", n);
+        let fileName = n % order == 0 ? "joker,jpg" : "h" + n + ".jpg";
+      }
+      addEventListener("load", function () {
+        let bt = document.querySelector(button);
+        bt.addEventListener("click", function () {
+          console.log("너 나 눌렀어?");
+          next();
+        });
+      });
+    </script>
+    <style>
+      #wrapper {
+        width: 400px;
+        height: 450px;
+        background-color: yellow;
+        margin: auto;
+      }
+      #wrapper img {
+        width: 100%;
+        height: 400px;
+      }
+      button {
+        width: 100%;
+        height: 100%;
+        border-radius: 5px;
+      }
+    </style>
+  </head>
+  <body onload="init">
+    <div id="wrapper">
+      <div id="controler">
+        <select id="" onchange="alert()">
+          <option>조커를 등장시킬 순번</option>
+          <option value="">2번째마다</option>
+          <option value="">3번쨰마다</option>
+          <option value="">4번쨰마다</option>
+        </select>
+        <button>다음카드</button>
+      </div>
+
+      <img id="pic" src="../images/card/h1.jpg" />
+    </div>
+  </body>
+</html>
